@@ -14,6 +14,7 @@ d <- read_sheet("https://docs.google.com/spreadsheets/d/1AB8V6tL0tJQQ87p_ZoMbgZ7
 
 ```{r, echo = FALSE}
 d %>% 
+  select(-n) |>
   mutate(
     date = as.Date(date),
     week = ifelse(is.na(week), "", week)) %>%
